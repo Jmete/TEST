@@ -1,2 +1,2 @@
-#TESTGIT
+#MyTest
 For git tests
