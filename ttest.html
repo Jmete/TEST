@@ -1,0 +1,58 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>TEST TIMER</title>
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+
+<body>
+
+    <input id="clickStart" type="button" value="Start Timer" onclick="tstart();" />
+    <input id="clickMe" type="button" value="clickme" onclick="tdemo();" />
+
+    <div id="testbox"></div>
+
+    <div id="testbox1"></div>
+
+    <div id="testbox2"></div>
+
+  <script src="https://code.jquery.com/jquery-{{JQUERY_VERSION}}.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    <!-- JS on the page -->
+
+    sTime = 0;
+    document.getElementById("testbox").innerHTML = sTime;
+
+    function tstart(){
+        var sInit = new Date();
+        sTime = sInit.getTime();
+
+        document.getElementById("testbox1").innerHTML = sTime;
+
+    }
+
+    function tdemo(){
+        var d = new Date();
+        var n = d.getTime();
+
+        var eTime = n - sTime;
+
+        var x = eTime
+        var tempTime = moment.duration(x);
+        var y = tempTime.hours() + ":" + tempTime.minutes() + ":" + tempTime.seconds();
+        document.getElementById("testbox2").innerHTML = y;
+    }
+
+  </script>
+</body>
+</html>
